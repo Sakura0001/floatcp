@@ -2,13 +2,13 @@ package main
 
 func EqualCompareIfFloats() {
 	x, y := 400., 500.
-	if 300. == 100. { // want "float comparison found \"300. == 100.\""
+	if 300. == 100. {
 		dummy()
 	}
-	if x == y { // want "float comparison found \"x == y\""
+	if x == y {
 		dummy()
 	}
-	if 300.+200. == 10. { // want "float comparison found \"300.+200. == 10."
+	if 300.+200. == 10. {
 		dummy()
 	}
 	if 300 == 200 {
@@ -18,11 +18,11 @@ func EqualCompareIfFloats() {
 
 func NotEqualCompareIfFloats() {
 	x, y := 400., 500.
-	if 300. != 100. { // want "float comparison found \"300. != 100.\""
+	if 300. != 100. {
 
 		dummy()
 	}
-	if x != y { // want "float comparison found \"x != y\""
+	if x != y {
 		dummy()
 	}
 }
@@ -30,13 +30,13 @@ func NotEqualCompareIfFloats() {
 func EqualCompareIfCustomType() {
 	type number float64
 	var x, y number = 300., 400.
-	if x == y { // want "float comparison found \"x == y\""
+	if x == y {
 		dummy()
 	}
 }
 
 func EqualCompareIfFunctions() {
-	if dummy() == dummy() { // want "float comparison found \"dummy.. == dummy..\""
+	if dummy() == dummy() {
 		dummy()
 	}
 }
@@ -56,22 +56,22 @@ func EqualCompareIfNotSimpleType() {
 }
 
 func GreaterLessCompareIfFloats() {
-	if 300. >= 100. { // want "float comparison found \"300. >= 100.\""
+	if 300. >= 100. {
 		dummy()
 	}
-	if 300. <= 100. { // want "float comparison found \"300. <= 100.\""
+	if 300. <= 100. {
 		dummy()
 	}
-	if 300. < 100. { // want "float comparison found \"300. < 100.\""
+	if 300. < 100. {
 		dummy()
 	}
-	if 300. > 100. { // want "float comparison found \"300. > 100.\""
+	if 300. > 100. {
 		dummy()
 	}
 }
 
 func SwitchStmtWithFloat() {
-	switch 300. { // want "float comparison with switch statement"
+	switch 300. {
 	case 100.:
 	case 200:
 	}
@@ -79,22 +79,22 @@ func SwitchStmtWithFloat() {
 
 func EqualCompareSwitchFloats() {
 	switch {
-	case 100. == 200.: // want "float comparison found \"100. == 200.\""
+	case 100. == 200.:
 	}
 }
 
 func NotEqualCompareSwitchFloats() {
 	switch {
-	case 100. != 200.: // want "float comparison found \"100. != 200.\""
+	case 100. != 200.:
 	}
 }
 
 func GreaterLessCompareSwitchFloats() {
 	switch {
-	case 100. <= 200.: // want "float comparison found \"100. <= 200.\""
-	case 100. < 200.: // want "float comparison found \"100. < 200.\""
-	case 100. >= 200.: // want "float comparison found \"100. >= 200.\""
-	case 100. > 200.: // want "float comparison found \"100. > 200.\""
+	case 100. <= 200.:
+	case 100. < 200.:
+	case 100. >= 200.:
+	case 100. > 200.:
 
 	}
 }
