@@ -1,5 +1,3 @@
-// Copyright: (c) 2022, Mathias Weber (mweb@gmx.ch)
-
 package main
 
 import "testing"
